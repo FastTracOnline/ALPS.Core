@@ -1,0 +1,121 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>EXE</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <!--<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>-->
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <RuntimeIdentifiers>win7-x64;win7-x86;ubuntu.16.04-x64;</RuntimeIdentifiers>
+    <SuppressDockerTargets>True</SuppressDockerTargets>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configuration\AgentConfiguration.cs" />
+    <Compile Remove="Configuration\ExpenseTypeConfiguration.cs" />
+    <Compile Remove="Configuration\LienholderConfiguration.cs" />
+    <Compile Remove="Configuration\LocationConfiguration.cs" />
+    <Compile Remove="Configuration\ModelConfiguration.cs" />
+    <Compile Remove="Configuration\OrderConfiguration.cs" />
+    <Compile Remove="Configuration\PoliceDepartmentConfiguration.cs" />
+    <Compile Remove="Configuration\RepossessorConfiguration.cs" />
+    <Compile Remove="Configuration\ServiceConfiguration.cs" />
+    <Compile Remove="Configuration\SubscriberConfiguration.cs" />
+    <Compile Remove="Configuration\VendorConfiguration.cs" />
+    <Compile Remove="Controllers\ExpenseTypesController.cs" />
+    <Compile Remove="Controllers\HomeController.cs" />
+    <Compile Remove="Controllers\LocationsController.cs" />
+    <Compile Remove="Controllers\LookupsController.cs" />
+    <Compile Remove="Controllers\MakesController.cs" />
+    <Compile Remove="Controllers\ModelsController.cs" />
+    <Compile Remove="Controllers\PoliceController.cs" />
+    <Compile Remove="Controllers\RepossessorsController.cs" />
+    <Compile Remove="Controllers\ValuesController.cs" />
+    <Compile Remove="DatabaseInitializer.cs" />
+    <Compile Remove="Entities\Address.cs" />
+    <Compile Remove="Entities\Assignment.cs" />
+    <Compile Remove="Entities\ExpenseType.cs" />
+    <Compile Remove="Entities\Invoice.cs" />
+    <Compile Remove="Entities\InvoiceDetail.cs" />
+    <Compile Remove="Entities\Location.cs" />
+    <Compile Remove="Entities\Lookups.cs" />
+    <Compile Remove="Entities\Make.cs" />
+    <Compile Remove="Entities\Model.cs" />
+    <Compile Remove="Entities\Notification.cs" />
+    <Compile Remove="Entities\OrderList.cs" />
+    <Compile Remove="Entities\OrderUpdate.cs" />
+    <Compile Remove="Entities\Payment.cs" />
+    <Compile Remove="Entities\PaymentDetail.cs" />
+    <Compile Remove="Entities\PersonalProperty.cs" />
+    <Compile Remove="Entities\Photos.cs" />
+    <Compile Remove="Entities\Pricing.cs" />
+    <Compile Remove="Entities\Repossessor.cs" />
+    <Compile Remove="Entities\ServiceUsed.cs" />
+    <Compile Remove="Entities\User.cs" />
+    <Compile Remove="Helpers\ConfigurationExtensions.cs" />
+    <Compile Remove="Helpers\IQueryableExtensions.cs" />
+    <Compile Remove="Helpers\ListExtensions.cs" />
+    <Compile Remove="Helpers\RequestHandler.cs" />
+    <Compile Remove="Helpers\USStateValidationAttribute.cs" />
+    <Compile Remove="Interfaces\IAgentRepository.cs" />
+    <Compile Remove="Interfaces\IAssignmentRepository.cs" />
+    <Compile Remove="Interfaces\IExpenseTypeRepository.cs" />
+    <Compile Remove="Interfaces\ILienholderRepository.cs" />
+    <Compile Remove="Interfaces\ILocationRepository.cs" />
+    <Compile Remove="Interfaces\IMakeRepository.cs" />
+    <Compile Remove="Interfaces\IModelRepository.cs" />
+    <Compile Remove="Interfaces\IOrderRepository.cs" />
+    <Compile Remove="Interfaces\IRepository.cs" />
+    <Compile Remove="Interfaces\IRepositoryProvider.cs" />
+    <Compile Remove="Interfaces\IRepossessorRepository.cs" />
+    <Compile Remove="Interfaces\IServiceRepository.cs" />
+    <Compile Remove="Interfaces\ISubscriberRepository.cs" />
+    <Compile Remove="Interfaces\IUow.cs" />
+    <Compile Remove="Interfaces\IVendorRepository.cs" />
+    <Compile Remove="Repositories\AgentRepository.cs" />
+    <Compile Remove="Repositories\AssignmentRepository.cs" />
+    <Compile Remove="Repositories\EFRepository.cs" />
+    <Compile Remove="Repositories\ExpenseTypeRepository.cs" />
+    <Compile Remove="Repositories\LienholderRepository.cs" />
+    <Compile Remove="Repositories\LocationRepository.cs" />
+    <Compile Remove="Repositories\MakeRepository.cs" />
+    <Compile Remove="Repositories\ModelRepository.cs" />
+    <Compile Remove="Repositories\OrderRepository.cs" />
+    <Compile Remove="Repositories\RepossessorRepository.cs" />
+    <Compile Remove="Repositories\ServiceRepository.cs" />
+    <Compile Remove="Repositories\SubscriberRepository.cs" />
+    <Compile Remove="Repositories\VendorRepository.cs" />
+    <Compile Remove="RepositoryActionResult.cs" />
+    <Compile Remove="RepositoryActionStatus.cs" />
+    <Compile Remove="RepositoryFactories.cs" />
+    <Compile Remove="RepositoryProvider.cs" />
+    <Compile Remove="Uow.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ALPS.Common\ALPS.Common.csproj" />
+    <ProjectReference Include="..\ALPS.DTO\ALPS.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

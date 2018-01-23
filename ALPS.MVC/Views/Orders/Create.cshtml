@@ -1,0 +1,288 @@
+﻿@model ALPS.MVC.ViewModels.Order
+@using ALPS.Common;
+
+@{ 
+    var AgentName = Model.AssignedTo.FirstName + " " + Model.AssignedTo.LastName;
+    var ClientName = Model.Lienholder.Name;
+    var BillToName = Model.BillToClient.Name;
+}
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-md-2">
+                <label asp-for="OrderNumber" class="control-label"></label>
+                <input asp-for="OrderNumber" class="form-control" />
+                <span asp-validation-for="OrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="ClientRefNo" class="control-label"></label>
+                <input asp-for="ClientRefNo" class="form-control" />
+                <span asp-validation-for="ClientRefNo" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="OrderType" class="control-label"></label>
+                <select asp-for="OrderType" asp-items="Html.GetEnumSelectList<OrderType>()" class="form-control"></select>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="OrderStatus" class="control-label"></label>
+                <select asp-for="OrderStatus" asp-items="Html.GetEnumSelectList<OrderStatus>()" class="form-control"></select>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="Received" class="control-label"></label>
+                <input asp-for="Received" class="form-control" />
+                <span asp-validation-for="Received" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="AgentId" class="control-label"></label>
+                @Html.HiddenFor(m => m.AgentId)
+                <input type="button" id="AgentSearch" name="AgentSearch" value="..." class="btn btn-xs btn-primary" />
+                <input id="AgentName" value="@AgentName" class="form-control" readonly />
+                <span asp-validation-for="AgentId" class="text-danger"></span>
+            </div>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#pg1">Client</a></li>
+                <li><a data-toggle="tab" href="#pg2">Vehicle</a></li>
+                <li><a data-toggle="tab" href="#pg3">Contacts</a></li>
+                <li><a data-toggle="tab" href="#pg4">Working</a></li>
+                <li><a data-toggle="tab" href="#pg5">Repo</a></li>
+                <li><a data-toggle="tab" href="#pg6">Reporting</a></li>
+                <li><a data-toggle="tab" href="#pg7">Billing</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="pg1" class="tab-pane fade in active">
+                    <h3>Client</h3>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-10">
+                            <label asp-for="LienholderId" class="control-label"></label>
+                            @Html.HiddenFor(m => m.LienholderId)
+                            <input type="button" id="ClentSearch" name="ClientSearch" value="..." class="btn btn-xs btn-primary" />
+                            <input id="ClientName" value="@ClientName" class="form-control" readonly />
+                            <span asp-validation-for="LienholderId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-2">
+                            <label asp-for="LoanDate" class="control-label"></label>
+                            <input asp-for="LoanDate" class="form-control" />
+                            <span asp-validation-for="LoanDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="LastPayment" class="control-label"></label>
+                            <input asp-for="LastPayment" class="form-control" />
+                            <span asp-validation-for="LastPayment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="DueDate" class="control-label"></label>
+                            <input asp-for="DueDate" class="form-control" />
+                            <span asp-validation-for="DueDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="PastDue" class="control-label"></label>
+                            <input asp-for="PastDue" class="form-control" />
+                            <span asp-validation-for="PastDue" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-2">
+                            <label asp-for="Amt_Loan" class="control-label"></label>
+                            <input asp-for="Amt_Loan" class="form-control" />
+                            <span asp-validation-for="Amt_Loan" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Amt_Balance" class="control-label"></label>
+                            <input asp-for="Amt_Balance" class="form-control" />
+                            <span asp-validation-for="Amt_Balance" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Amt_Payment" class="control-label"></label>
+                            <input asp-for="Amt_Payment" class="form-control" />
+                            <span asp-validation-for="Amt_Payment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Amt_Due" class="control-label"></label>
+                            <input asp-for="Amt_Due" class="form-control" />
+                            <span asp-validation-for="Amt_Due" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-2">
+                            <label asp-for="PropertyDaysFree" class="control-label"></label>
+                            <input asp-for="PropertyDaysFree" class="form-control" />
+                            <span asp-validation-for="PropertyDaysFree" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="PropertyInitialFee" class="control-label"></label>
+                            <input asp-for="PropertyInitialFee" class="form-control" />
+                            <span asp-validation-for="PropertyInitialFee" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="PropertyDailyFee" class="control-label"></label>
+                            <input asp-for="PropertyDailyFee" class="form-control" />
+                            <span asp-validation-for="PropertyDailyFee" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="VehicleDaysFree" class="control-label"></label>
+                            <input asp-for="VehicleDaysFree" class="form-control" />
+                            <span asp-validation-for="VehicleDaysFree" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="VehicleInitialFee" class="control-label"></label>
+                            <input asp-for="VehicleInitialFee" class="form-control" />
+                            <span asp-validation-for="VehicleInitialFee" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="VehicleDailyFee" class="control-label"></label>
+                            <input asp-for="VehicleDailyFee" class="form-control" />
+                            <span asp-validation-for="VehicleDailyFee" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-2">
+                            <label asp-for="Closed" class="control-label"></label>
+                            <input asp-for="Closed" class="form-control" />
+                            <span asp-validation-for="Closed" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="CloseReason" class="control-label"></label>
+                            <select asp-for="CloseReason" asp-items="Html.GetEnumSelectList<CloseReason>()" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="BillToId" class="control-label"></label>
+                            @Html.HiddenFor(m => m.BillToId)
+                            <input type="button" id="BillToSearch" name="BillToSearch" value="..." class="btn btn-xs btn-primary" />
+                            <input id="BillToName" value="@BillToName" class="form-control" readonly />
+                            <span asp-validation-for="BillToId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="pg2" class="tab-pane fade">
+                    <h3>Vehicle</h3>
+                    <div class="form-group">
+                        <label asp-for="VehicleId" class="control-label"></label>
+                        <input asp-for="VehicleId" class="form-control" />
+                        <span asp-validation-for="VehicleId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div id="pg3" class="tab-pane fade">
+                    <h3>Debtor/Contacts</h3>
+                    <div class="form-group">
+                        <label asp-for="DebtorId" class="control-label"></label>
+                        <input asp-for="DebtorId" class="form-control" />
+                        <span asp-validation-for="DebtorId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div id="pg4" class="tab-pane fade">
+                    <h3>In Progress</h3>
+                    <div class="form-group" style="vertical-align:top" >
+                        <label asp-for="Remarks" class="control-label col-md-1"></label>
+                        @Html.TextAreaFor(m => m.Remarks, 5, 1, new { @class = "form-control" } )
+                        <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="vertical-align:top" >
+                        <label asp-for="Notes" class="control-label col-md-1"></label>
+                        @Html.TextAreaFor(m => m.Notes, 5, 1, new { @class = "form-control" })
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+                </div>
+                <div id="pg5" class="tab-pane fade">
+                    <h3>Repossession</h3>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-2">
+                            <label asp-for="Repossessed" class="control-label"></label>
+                            <input asp-for="Repossessed" class="form-control" />
+                            <span asp-validation-for="Repossessed" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="VehicleReleased" class="control-label"></label>
+                            <input asp-for="VehicleReleased" class="form-control" />
+                            <span asp-validation-for="VehicleReleased" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="checkbox checkbox-inline">
+                                <label>
+                                    <input asp-for="HasProperty" /> @Html.DisplayNameFor(model => model.HasProperty)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="PropertyReleased" class="control-label"></label>
+                            <input asp-for="PropertyReleased" class="form-control" />
+                            <span asp-validation-for="PropertyReleased" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label asp-for="Property" class="control-label col-md-1"></label>
+                        @Html.TextAreaFor(m => m.Property, 5, 1, new { @class = "form-control" })
+                        <span asp-validation-for="Property" class="text-danger"></span>
+                    </div>
+                </div>
+                <div id="pg6" class="tab-pane fade">
+                    <h3>Reporting</h3>
+                </div>
+                <div id="pg7" class="tab-pane fade">
+                    <h3>Billing</h3>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-2">
+                            <label asp-for="Billed" class="control-label"></label>
+                            <input asp-for="Billed" class="form-control" />
+                            <span asp-validation-for="Billed" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Paid" class="control-label"></label>
+                            <input asp-for="Paid" class="form-control" />
+                            <span asp-validation-for="Paid" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#AgentSearch').click(function () {
+            PopupCenter('/Agents/Search', 'Search', 640, 250);
+        });
+
+        $('#ClentSearch').click(function () {
+            PopupCenter('/Lienholders/Search', 'Search', 640, 250);
+        });
+
+        $('#BillToSearch').click(function () {
+            PopupCenter('/Lienholders/Search?type="billto"', 'Search', 640, 250);
+        });
+
+        function PopupCenter(url, title, w, h) {
+            // Fixes dual-screen position                         Most browsers      Firefox
+            var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+            var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+            var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+            var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+            var top = ((height / 2) - (h / 2)) + dualScreenTop;
+            var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+            // Puts focus on the newWindow
+            if (window.focus) {
+                newWindow.focus();
+            }
+        };
+    });
+</script>

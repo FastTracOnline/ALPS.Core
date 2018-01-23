@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://www.zerodefectsw.com/ALPS",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "http://www.zerodefectsw.com/ALPS",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "ALPS.MVC": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://www.zerodefectsw.com/ALPS",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://www.zerodefectsw.com/ALPS"
+    }
+  }
+}

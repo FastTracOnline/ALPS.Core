@@ -1,0 +1,258 @@
+﻿@model ALPS.MVC.ViewModels.Order
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientRefNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientRefNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Received)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Received)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Repossessed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Repossessed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleReleased)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleReleased)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasProperty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasProperty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyReleased)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropertyReleased)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Billed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Billed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Paid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Paid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Closed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Closed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CloseReason)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CloseReason)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PastDue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PastDue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LoanDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPayment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastPayment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amt_Loan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amt_Loan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amt_Balance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amt_Balance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amt_Payment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amt_Payment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amt_Due)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amt_Due)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Property)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Property)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyDaysFree)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropertyDaysFree)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyInitialFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropertyInitialFee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyDailyFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropertyDailyFee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleDaysFree)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleDaysFree)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleInitialFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleInitialFee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleDailyFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleDailyFee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Updated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Updated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Version)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Version)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubscriberId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubscriberId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LienholderId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LienholderId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DebtorId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AgentId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BillToId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BillToId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

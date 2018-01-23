@@ -1,0 +1,16 @@
+﻿@model ALPS.MVC.ViewModels.Dashboard
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h2>My Dashboard</h2>
+
+<div>
+    @Html.ActionLink(Model.Orders_Working + "  Working Orders", "GetOrders", "Orders", new { type="active" }, new { @class = "btn btn-primary" });
+    @Html.ActionLink(Model.Lienholders_Active + "  Active Lienholders", "GetLienholders", "Lienholders", new { type = "active" }, new { @class = "btn btn-primary" });
+    @Html.ActionLink(Model.Agents_Active + "  Active Agents", "GetAgents", "Agents", new { type = "active" }, new { @class = "btn btn-primary" });
+    @Html.ActionLink(Model.Orders_New + "  New Orders", "GetOrders", "Orders", new { type = "new" }, new { @class = "btn btn-primary" });
+    @Html.ActionLink(Model.Orders_Billable + "  Billable Orders", "GetOrders", "Orders", new { type = "billable" }, new { @class = "btn btn-primary" });
+    @Html.ActionLink(Model.Orders_NotPaid + "  Unpaid Orders", "GetOrders", "Orders", new { type = "unpaid" }, new { @class = "btn btn-primary" });
+    @Html.ActionLink(Model.Orders_Repossessed + "  Repossessions", "GetOrders", "Orders", new { type = "repo" }, new { @class = "btn btn-primary" });
+</div>

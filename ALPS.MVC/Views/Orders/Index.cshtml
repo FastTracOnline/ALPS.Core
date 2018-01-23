@@ -1,0 +1,269 @@
+﻿@model IEnumerable<ALPS.MVC.ViewModels.Order>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientRefNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Received)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Repossessed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleReleased)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HasProperty)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PropertyReleased)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Billed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Paid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Closed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CloseReason)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DueDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PastDue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LoanDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastPayment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amt_Loan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amt_Balance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amt_Payment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amt_Due)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remarks)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PropertyDaysFree)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PropertyInitialFee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PropertyDailyFee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleDaysFree)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleInitialFee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleDailyFee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Active)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Created)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Updated)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Version)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubscriberId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LienholderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DebtorId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AgentId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BillToId)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientRefNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Received)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Repossessed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleReleased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasProperty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyReleased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Billed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Closed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CloseReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PastDue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amt_Loan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amt_Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amt_Payment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amt_Due)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Property)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyDaysFree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyInitialFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyDailyFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleDaysFree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleInitialFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleDailyFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubscriberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LienholderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DebtorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillToId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

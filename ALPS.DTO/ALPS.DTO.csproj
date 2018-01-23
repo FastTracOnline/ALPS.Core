@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AgentList.cs" />
+    <Compile Remove="CompanyList.cs" />
+    <Compile Remove="ExpenseType.cs" />
+    <Compile Remove="Location.cs" />
+    <Compile Remove="LocationList.cs" />
+    <Compile Remove="Make.cs" />
+    <Compile Remove="Model.cs" />
+    <Compile Remove="Repossessor.cs" />
+    <Compile Remove="RepossessorList.cs" />
+    <Compile Remove="User.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ALPS.Common\ALPS.Common.csproj" />
+  </ItemGroup>
+
+</Project>

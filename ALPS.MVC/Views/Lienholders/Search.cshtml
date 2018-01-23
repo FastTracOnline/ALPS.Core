@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ALPS.MVC.ViewModels.Lienholder>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimaryContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <input type="button" value="Select" class="btn btn-sm btn-primary" onclick="return updateParent(@item.Id,'@item.Name');" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrimaryContact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    function updateParent(id, name) {
+        if ("@ViewBag.searchtype" == "lienholder") {
+            opener.document.getElementById("LienholderId").value = id;
+            opener.document.getElementById("ClientName").value = name;
+        } else {
+            opener.document.getElementById("BillToId").value = id;
+            opener.document.getElementById("BillToName").value = name;
+        }
+        window.close();
+        return false;
+    }
+</script>
